@@ -13,7 +13,7 @@ sounds.forEach((sound)=> {
 
     });    
     btn.addEventListener('mouseenter', ()=> {
-        console.log("enter");
+        //console.log("enter");
         update();
         btn.innerText = count[sounds.indexOf(sound)];
 
@@ -32,7 +32,7 @@ function update() {
     xhttp.onreadystatechange = function() {
        // console.log(xhttp.readyState);
        // console.log("status: " + xhttp.status);
-        if (this.readyState == 4 || this.status == 200) {
+        if (this.readyState == 4 && this.status == 200) {
            // console.log("enter if");
             //console.log(this.responseText);
             const file = this.responseText;
@@ -48,7 +48,7 @@ function update() {
     //console.log(count.length);
 };
 function click(person) {
-    console.log(person);
+    //console.log(person);
     const xhttp = new XMLHttpRequest();
     xhttp.open('GET', 'count.txt', true);
     xhttp.send(person);
