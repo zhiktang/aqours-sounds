@@ -7,6 +7,7 @@ sounds.forEach((sound)=> {
     btn.innerText = sound;
     btn.addEventListener('click', ()=> {
         //console.log(sound);
+        click(sound);
         const audio = new Audio(`sounds/${sound}.mp3`);
         audio.play();
 
@@ -29,13 +30,13 @@ function update() {
     xhttp.open('GET', 'count.txt', true);
     xhttp.send();
     xhttp.onreadystatechange = function() {
-        console.log(xhttp.readyState);
-        console.log("status: " + xhttp.status);
+       // console.log(xhttp.readyState);
+       // console.log("status: " + xhttp.status);
         if (this.readyState == 4 || this.status == 200) {
-            console.log("enter if");
-            console.log(this.responseText);
+           // console.log("enter if");
+            //console.log(this.responseText);
             const file = this.responseText;
-            console.log(file);
+           // console.log(file);
             const lines = file.split('\n');
             for (var i = 0; i < sounds.length; i++) {
                 count[i] = lines[i];
@@ -46,3 +47,19 @@ function update() {
     //console.log(count);
     //console.log(count.length);
 };
+function click(person) {
+    console.log(person);
+    const xhttp = new XMLHttpRequest();
+    xhttp.open('GET', 'count.txt', true);
+    xhttp.send(person);
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 || this.status == 200) {
+            const file = this.responseText;
+            const lines = file.split('\n');
+            for (var i = 0; i < sounds.length; i++) {
+                count[i] = lines[i];
+            }
+        }
+    }
+};
+
