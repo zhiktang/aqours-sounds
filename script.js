@@ -8,6 +8,7 @@ sounds.forEach((sound)=> {
     btn.addEventListener('click', ()=> {
         //console.log(sound);
         click(sound);
+        update();
         const audio = new Audio(`sounds/${sound}.mp3`);
         audio.play();
 
@@ -50,16 +51,7 @@ function update() {
 function click(person) {
     //console.log(person);
     const xhttp = new XMLHttpRequest();
-    xhttp.open('GET', 'count.txt', true);
+    xhttp.open('POST', 'server.js', true);
     xhttp.send(person);
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 || this.status == 200) {
-            const file = this.responseText;
-            const lines = file.split('\n');
-            for (var i = 0; i < sounds.length; i++) {
-                count[i] = lines[i];
-            }
-        }
-    }
 };
 
