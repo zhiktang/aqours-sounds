@@ -3,7 +3,10 @@ var express = require('express');
 const fs = require('fs');
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
-app.post('/server.js', function(req, res) {
+app.get("/", function(req, res) {
+    res.sendFile(__dirname + "/index.html");
+  });
+app.post('/', function(req, res) {
    // console.log(req.body);
     //console.log('post');
    res.send('Got a POST request');
