@@ -51,7 +51,7 @@ function update() {
 function click(person) {
     //console.log(person);
     const xhttp = new XMLHttpRequest();
-    xhttp.open('POST', 'server.js', true);
+    xhttp.open('POST', '192.168.1.137:3000', true);
     xhttp.send(person);
     xhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
