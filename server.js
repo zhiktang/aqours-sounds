@@ -11,6 +11,34 @@ app.post('/', function(req, res) {
    if (req.body = '{ Riko: \'\'}'){
         console.log("Riko");
    }
+    else if (req.body = '{ Chika: \'\'}'){
+        console.log("Chika");
+    }
+    else if (req.body = '{ You: \'\'}'){
+        console.log("You");
+    }
+    else if (req.body = '{ Dia: \'\'}'){
+        console.log("Dia");
+    }
+    else if (req.body = '{ Kanan: \'\'}'){
+        console.log("Kanan");
+    }
+    else if (req.body = '{ Mari: \'\'}'){
+        console.log("Mari");
+    }
+    else if (req.body = '{ Hanamaru: \'\'}'){
+        console.log("Hanamaru");
+    }
+    else if (req.body = '{ Ruby: \'\'}'){
+        console.log("Ruby");
+    }
+    else if (req.body = '{ Yoshiko: \'\'}'){
+        console.log("Yoshiko");
+    }
+    else {
+        console.log("error");
+    }
+    
     //console.log('post');
    res.send('Got a POST request');
    // res.send(req.body);
