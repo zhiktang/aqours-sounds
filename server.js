@@ -8,7 +8,7 @@ app.post('/', function(req, res) {
    //console.log(req.body.bodyParser);
    //console.log(req.body.sound);
    //console.log(req.body.count);
-    console.log(JSON.parse(req.body.person));
+    console.log(req.body.person);
     //console.log('post');
    res.send('Got a POST request');
    // res.send(req.body);
