@@ -7,6 +7,9 @@ app.post('/', function(req, res) {
    console.log(req.body);
    console.log(req.body.sound);
    console.log(req.body.count);
+   if (req.body = '{ Riko: \'\'}'){
+        console.log("Riko");
+   }
     //console.log('post');
    res.send('Got a POST request');
    // res.send(req.body);
