@@ -4,10 +4,10 @@ const fs = require('fs');
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/', function(req, res) {
-   console.log(req.body);
-   console.log(req.body.bodyParser);
-   console.log(req.body.sound);
-   console.log(req.body.count);
+   //console.log(req.body);
+   //console.log(req.body.bodyParser);
+   //console.log(req.body.sound);
+   //console.log(req.body.count);
    if (req.body = '{ Riko: \'\'}'){
         console.log("Riko");
    }
