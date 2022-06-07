@@ -53,7 +53,7 @@ function click(person) {
     const xhttp = new XMLHttpRequest();
     xhttp.open('POST', 'http://192.168.1.137:3000', true);
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhttp.send(person);
+    xhttp.send(JSON.stringify({person: person}));
     xhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);
