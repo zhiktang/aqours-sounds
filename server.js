@@ -3,6 +3,7 @@ var express = require('express');
 const fs = require('fs');
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.post('/', function(req, res) {
    console.log(req.body);
    //console.log(req.body.bodyParser);
