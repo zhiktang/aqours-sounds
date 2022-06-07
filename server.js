@@ -14,7 +14,7 @@ app.post('/', function(req, res) {
    res.send('Got a POST request');
    // res.send(req.body);
    // res.send(count.txt)
-   fs.writeFile('test.txt', req.body.person, function(err) {
+   fs.writeFile('test.txt', req.body, function(err) {
        if(err) {
            return console.log(err);
        }
