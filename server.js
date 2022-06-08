@@ -27,6 +27,7 @@ app.post('/', function(req, res) {
         if(err) {
             return console.log(err);
         }
+        console.log(data.toString());
         var lines = data.toString().split('\n');
         for (var i = 0; i < lines.length; i++) {
             console.log(lines[i]);
