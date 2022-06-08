@@ -33,6 +33,7 @@ app.post('/', function(req, res) {
                 var data = lines[i].split(' ');
                 data[1] = parseInt(data[1]) + 1;
                 lines[i] = data.join(' ');
+                console.log(lines[i]);
             }
             output += lines[i] + '\n';
         }  
