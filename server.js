@@ -10,6 +10,7 @@ app.post('/', function(req, res) {
    //console.log(req.body.sound);
    //console.log(req.body.count);
     console.log(req.body.person);
+    var person = req.body.person;
     //console.log('post');
    res.send('Got a POST request');
    // res.send(req.body);
@@ -21,7 +22,22 @@ app.post('/', function(req, res) {
         console.log("The file was saved!");
     });
     */
+    fs.readFile('count.txt', function(err, data) {
+        if(err) {
+            return console.log(err);
+        }
+        var lines = data.toString().split('\n');
+        var output = '';
+        for (var i = 0; i < lines.length; i++) {
+            if (lines[i].startsWith(person)) {
+                var data = lines[i].split(' ');
+                data[1] = parseInt(data[1]) + 1;
+                lines[i] = data.join(' ');
+            }
+            output += lines[i] + '\n';
+        }  
     });
+});
     app.listen(3000, function(){
         console.log("server is running on port 3000");
       })
