@@ -27,20 +27,20 @@ app.post('/', function(req, res) {
         if(err) {
             return console.log(err);
         }
-        console.log(data);
+        console.log("data is" + data);
         var lines = data.split('\n');
         for (var i = 0; i < lines.length; i++) {
-            console.log(lines[i]);
+            console.log("Line " + i + " is: " + lines[i]);
             if (lines[i].startsWith(person)) {
                 var data = lines[i].split(' ');
                 data[1] = parseInt(data[1]) + 1;
                 lines[i] = data.join(' ');
-                console.log(lines[i]);
+                console.log("modified line is: " + lines[i]);
             }
             output += lines[i] + '\n';
         }  
     });
-    console.log(output);
+    console.log("output is: " + output);
     fs.writeFile('count.txt', output, function(err) {
         if(err) {
             return console.log(err);
