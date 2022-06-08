@@ -24,6 +24,7 @@ app.post('/', function(req, res) {
     */
    var output = '';
     fs.readFile('count.txt', 'utf-8' , (err, data) => {
+        console.log("reading file");
         if(err) {
             return console.log(err);
         }
