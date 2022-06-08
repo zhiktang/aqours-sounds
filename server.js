@@ -4,6 +4,10 @@ const fs = require('fs');
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.get('/', function (req, res) {
+    res.send('Hello World!');
+});
+
 app.post('/', function(req, res) {
    //console.log(req.body);
    //console.log(req.body.bodyParser);
