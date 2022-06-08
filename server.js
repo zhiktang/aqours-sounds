@@ -39,6 +39,7 @@ app.post('/', function(req, res) {
             output += lines[i] + '\n';
         }  
     });
+    console.log(output);
     fs.writeFile('count.txt', output, function(err) {
         if(err) {
             return console.log(err);
