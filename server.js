@@ -22,12 +22,12 @@ app.post('/', function(req, res) {
         console.log("The file was saved!");
     });
     */
+   var output = '';
     fs.readFile('count.txt', function(err, data) {
         if(err) {
             return console.log(err);
         }
         var lines = data.toString().split('\n');
-        var output = '';
         for (var i = 0; i < lines.length; i++) {
             if (lines[i].startsWith(person)) {
                 var data = lines[i].split(' ');
