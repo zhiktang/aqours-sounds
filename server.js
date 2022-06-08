@@ -29,6 +29,7 @@ app.post('/', function(req, res) {
         }
         var lines = data.toString().split('\n');
         for (var i = 0; i < lines.length; i++) {
+            console.log(lines[i]);
             if (lines[i].startsWith(person)) {
                 var data = lines[i].split(' ');
                 data[1] = parseInt(data[1]) + 1;
