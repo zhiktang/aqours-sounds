@@ -38,7 +38,11 @@ app.post('/', function(req, res) {
                 lines[i] = data.join(' ');
                 console.log("modified line is: " + lines[i]);
             }
-            output += lines[i] + '\n';
+            output += lines[i];
+            if(i < lines.length - 1) {
+                output += '\n';
+            }
+            
         }  
         console.log("output is: " + output);
     fs.writeFile('count.txt', output, function(err) {
