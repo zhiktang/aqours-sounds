@@ -27,8 +27,8 @@ app.post('/', function(req, res) {
         if(err) {
             return console.log(err);
         }
-        console.log(data.toString());
-        var lines = data.toString().split('\n');
+        console.log(data);
+        var lines = data.split('\n');
         for (var i = 0; i < lines.length; i++) {
             console.log(lines[i]);
             if (lines[i].startsWith(person)) {
