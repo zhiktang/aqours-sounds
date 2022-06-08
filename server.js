@@ -23,7 +23,7 @@ app.post('/', function(req, res) {
     });
     */
    var output = '';
-    fs.readFile('count.txt', function(err, data) {
+    fs.readFile('count.txt', 'utf-8' , (err, data) => {
         if(err) {
             return console.log(err);
         }
