@@ -58,15 +58,19 @@ app.post('/', function(req, res) {
 
         }  
        // console.log("output is: " + output);
-    fs.writeFile('count.txt', output, function(err) {
-        if(err) {
-            return console.log(err);
+        if(output != '') {
+            fs.writeFile('count.txt', output, function(err) {
+             if(err) {
+                    return console.log(err);
+             }
+             //console.log("The file was saved!");
+            } 
+            );
         }
-        //console.log("The file was saved!");
     });
-    });
-    
 });
+
+    
     app.listen(3000, function(){
         console.log("server is running on port 3000");
       })
