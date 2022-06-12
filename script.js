@@ -41,7 +41,7 @@ function update() {
             const file = this.responseText;
            // console.log(file);
             const lines = file.split('\n');
-            for (var i = 0; i < sounds.length; i++) {
+            for (var i = 0; i < lines.length; i++) {
                 var data = lines[i].split(' ');
                 count[i] = data[1];
             }
