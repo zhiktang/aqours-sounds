@@ -54,7 +54,7 @@ function update() {
 function click(person) {
     //console.log(person);
     const xhttp = new XMLHttpRequest();
-    xhttp.open('POST', 'http://75.3.106.179:3000', true);
+    xhttp.open('POST', 'http://count.alhub.net', true);
     xhttp.setRequestHeader('Content-type', 'application/json');
     xhttp.send(JSON.stringify({person: person}));
     xhttp.onreadystatechange = function() {
