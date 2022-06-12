@@ -12,6 +12,7 @@ sounds.forEach((sound)=> {
         click(sound);
         update();
         const audio = new Audio(`sounds/${sound}.mp3`);
+        audio.load();
         audio.play();
 
     });    
