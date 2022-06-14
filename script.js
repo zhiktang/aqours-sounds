@@ -9,12 +9,15 @@ sounds.forEach((sound)=> {
     update();
     btn.addEventListener('click', ()=> {
         //console.log(sound);
+        console.log('sending click');
         click(sound);
+        console.log('requesting update 1');
         update();
         btn.innerText = count[sounds.indexOf(sound)];
         const audio = new Audio(`sounds/${sound}.mp3`);
         audio.load();
         audio.play();
+        console.log('requesting update 2');
         update();
         btn.innerText = count[sounds.indexOf(sound)];
     });    
