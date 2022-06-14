@@ -36,7 +36,7 @@ sounds.forEach((sound)=> {
 });
 function update() {
     const xhttp = new XMLHttpRequest();
-    xhttp.open('GET', 'http://192.168.1.137:3000', true);
+    xhttp.open('GET', 'https://count.alhub.net', true);
     xhttp.send();
     xhttp.onreadystatechange = function() {
        // console.log(xhttp.readyState);
