@@ -11,6 +11,7 @@ sounds.forEach((sound)=> {
         //console.log(sound);
         click(sound);
         update();
+        btn.innerText = count[sounds.indexOf(sound)];
         const audio = new Audio(`sounds/${sound}.mp3`);
         audio.load();
         audio.play();
@@ -22,7 +23,6 @@ sounds.forEach((sound)=> {
         btn.innerText = count[sounds.indexOf(sound)];
 
     });
-
     btn.addEventListener('mouseleave', ()=> {
         btn.innerText = sound;
     });

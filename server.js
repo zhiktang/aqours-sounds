@@ -71,6 +71,7 @@ setInterval(save, 60000);
     app.listen(3000, function(){
         console.log("server is running on port 3000");
       })
+//old code for post request that writes to file 
 
     // app.post('/', function(req, res) {
 //    //console.log(req.body);
