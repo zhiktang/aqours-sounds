@@ -41,8 +41,9 @@ function update() {
             //console.log(this.responseText);
             const res = this.responseText;
            // console.log(file);
-           console.log(res);
-            
+            //console.log(res);
+            count = res;
+            console.log(count);
         }
     }
     //console.log(count);
