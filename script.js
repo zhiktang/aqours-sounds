@@ -10,7 +10,7 @@ sounds.forEach((sound)=> {
     btn.addEventListener('click', ()=> {
         //console.log(sound);
         console.log('sending click');
-        click(sound);
+        click(sound,btn);
         //console.log('requesting update 1');
         //update();
         btn.innerText = count[sounds.indexOf(sound)];
@@ -54,7 +54,7 @@ function update() {
     //console.log(count);
     //console.log(count.length);
 };
-function click(person) {
+function click(person,btn) {
     //console.log(person);
     const xhttp = new XMLHttpRequest();
     xhttp.open('POST', 'https://count.alhub.net', true);
