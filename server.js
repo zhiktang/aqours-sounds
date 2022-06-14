@@ -91,6 +91,7 @@ app.post('/', function(req, res) {
             break;
         }
     }
+    res.send('Got a POST request');
 }
 );
 function save () {
