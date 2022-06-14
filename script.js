@@ -18,7 +18,7 @@ sounds.forEach((sound)=> {
         audio.load();
         audio.play();
         //console.log('requesting update 2');
-        update();
+        //update();
         //btn.innerText = count[sounds.indexOf(sound)];
     });    
     btn.addEventListener('mouseenter', ()=> {
