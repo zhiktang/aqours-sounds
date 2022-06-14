@@ -28,6 +28,7 @@ sounds.forEach((sound)=> {
 
     });
     btn.addEventListener('mouseleave', ()=> {
+        update();
         btn.innerText = sound;
     });
 
