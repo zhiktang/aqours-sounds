@@ -28,9 +28,50 @@ fs.readFile('count.txt', 'utf8', function(err, data) {
 
 app.get('/', function (req, res) {
     res.send(JSON.stringify(count));
+    console.log('GET /');
 });
 
-// app.post('/', function(req, res) {
+
+app.post('/', function(req, res) {
+    console.log(req.body.person);
+    var person = req.body.person;
+    for (var i = 0; i < people.length; i++) {
+        if (people[i] == person) {
+            count[i] = parseInt(count[i]) + 1;
+            break;
+        }
+    }
+    res.send('Got a POST request');
+}
+);
+function save () {
+    var output = '';
+    for (var i = 0; i < people.length; i++) {
+        if(i < people.length - 1) {
+            output += people[i] + ' ' + count[i] + '\n';
+        }
+        else {
+            output += people[i] + ' ' + count[i];
+        }
+
+    }
+    fs.writeFile('count.txt', output, function(err) {
+        if(err) {
+            return console.log(err);
+        }
+        console.log("The file was saved!");
+    }
+    );
+}
+setInterval(save, 60000);
+
+
+    
+    app.listen(3000, function(){
+        console.log("server is running on port 3000");
+      })
+
+    // app.post('/', function(req, res) {
 //    //console.log(req.body);
 //    //console.log(req.body.bodyParser);
 //    //console.log(req.body.sound);
@@ -82,41 +123,3 @@ app.get('/', function (req, res) {
 //         }
 //     });
 // });
-app.post('/', function(req, res) {
-    console.log(req.body.person);
-    var person = req.body.person;
-    for (var i = 0; i < people.length; i++) {
-        if (people[i] == person) {
-            count[i] = parseInt(count[i]) + 1;
-            break;
-        }
-    }
-    res.send('Got a POST request');
-}
-);
-function save () {
-    var output = '';
-    for (var i = 0; i < people.length; i++) {
-        if(i < people.length - 1) {
-            output += people[i] + ' ' + count[i] + '\n';
-        }
-        else {
-            output += people[i] + ' ' + count[i];
-        }
-
-    }
-    fs.writeFile('count.txt', output, function(err) {
-        if(err) {
-            return console.log(err);
-        }
-        console.log("The file was saved!");
-    }
-    );
-}
-setInterval(save, 60000);
-
-
-    
-    app.listen(3000, function(){
-        console.log("server is running on port 3000");
-      })
