@@ -93,7 +93,20 @@ app.post('/', function(req, res) {
     }
 }
 );
-
+function save () {
+    var output = '';
+    for (var i = 0; i < people.length; i++) {
+        output += people[i] + ' ' + count[i] + '\n';
+    }
+    fs.writeFile('count.txt', output, function(err) {
+        if(err) {
+            return console.log(err);
+        }
+        console.log("The file was saved!");
+    }
+    );
+}
+setInterval(save, 60000);
 
 
     
