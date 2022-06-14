@@ -15,7 +15,8 @@ sounds.forEach((sound)=> {
         const audio = new Audio(`sounds/${sound}.mp3`);
         audio.load();
         audio.play();
-
+        update();
+        btn.innerText = count[sounds.indexOf(sound)];
     });    
     btn.addEventListener('mouseenter', ()=> {
         //console.log("enter");
