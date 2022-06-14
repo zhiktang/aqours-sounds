@@ -1,6 +1,6 @@
 const sounds = ['Chika', 'Riko', 'You', 'Dia', 'Kanan', 'Mari', 'Hanamaru', 'Ruby', 'Yoshiko'];
 
-const count = [0 , 0, 0, 0, 0, 0, 0, 0, 0];
+var count = [0 , 0, 0, 0, 0, 0, 0, 0, 0];
 sounds.forEach((sound)=> {
     
     const btn = document.createElement('button');
