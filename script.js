@@ -63,10 +63,11 @@ function click(person,btn) {
     xhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);
+            console.log('the only update that is supposed to happen');
+            update();
+            btn.innerText = count[sounds.indexOf(person)];
         }
-        console.log('the only update that is supposed to happen');
-        update();
-        btn.innerText = count[sounds.indexOf(person)];
+        
     }
     
 };
