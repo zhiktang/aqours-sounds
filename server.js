@@ -96,7 +96,13 @@ app.post('/', function(req, res) {
 function save () {
     var output = '';
     for (var i = 0; i < people.length; i++) {
-        output += people[i] + ' ' + count[i] + '\n';
+        if(i < people.length - 1) {
+            output += people[i] + ' ' + count[i] + '\n';
+        }
+        else {
+            output += people[i] + ' ' + count[i];
+        }
+        
     }
     fs.writeFile('count.txt', output, function(err) {
         if(err) {
