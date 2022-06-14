@@ -17,7 +17,7 @@ sounds.forEach((sound)=> {
         const audio = new Audio(`sounds/${sound}.mp3`);
         audio.load();
         audio.play();
-        console.log('requesting update 2');
+        //console.log('requesting update 2');
         //update();
         //btn.innerText = count[sounds.indexOf(sound)];
     });    
@@ -64,7 +64,8 @@ function click(person,btn) {
         if(this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);
         }
+        update();
+        btn.innerText = count[sounds.indexOf(person)];
     }
-    update();
-    btn.innerText = count[sounds.indexOf(person)];
+    
 };
