@@ -27,7 +27,7 @@ fs.readFile('count.txt', 'utf8', function(err, data) {
 );
 
 app.get('/', function (req, res) {
-    res.send('Hello World!');
+    res.send(count);
 });
 
 // app.post('/', function(req, res) {

@@ -31,7 +31,7 @@ sounds.forEach((sound)=> {
 });
 function update() {
     const xhttp = new XMLHttpRequest();
-    xhttp.open('GET', 'count.txt', true);
+    xhttp.open('GET', 'http://192.168.1.137:3000', true);
     xhttp.send();
     xhttp.onreadystatechange = function() {
        // console.log(xhttp.readyState);
@@ -39,13 +39,9 @@ function update() {
         if (this.readyState == 4 && this.status == 200) {
            // console.log("enter if");
             //console.log(this.responseText);
-            const file = this.responseText;
+            const res = this.responseText;
            // console.log(file);
-            const lines = file.split('\n');
-            for (var i = 0; i < lines.length; i++) {
-                var data = lines[i].split(' ');
-                count[i] = data[1];
-            }
+           console.log(res);
             
         }
     }
