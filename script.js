@@ -61,5 +61,4 @@ function click(person) {
             console.log(this.responseText);
         }
     }
-    console.log(this.responseText);
 };
