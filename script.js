@@ -65,6 +65,7 @@ function click(person,btn) {
             console.log(this.responseText);
             console.log('the only update that is supposed to happen');
             update();
+            console.log('changed button text');
             btn.innerText = count[sounds.indexOf(person)];
         }
         
