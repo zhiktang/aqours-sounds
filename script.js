@@ -66,5 +66,5 @@ function click(person,btn) {
         }
     }
     update();
-    btn.innerText = count[sounds.indexOf(sound)];
+    btn.innerText = count[sounds.indexOf(person)];
 };
