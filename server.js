@@ -38,10 +38,11 @@ app.post('/', function(req, res) {
     for (var i = 0; i < people.length; i++) {
         if (people[i] == person) {
             count[i] = parseInt(count[i]) + 1;
+            res.send(JSON.stringify(count[i]));
             break;
         }
     }
-    res.send('Got a POST request');
+    
 }
 );
 function save () {

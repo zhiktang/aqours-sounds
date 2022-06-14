@@ -18,7 +18,7 @@ sounds.forEach((sound)=> {
         audio.load();
         audio.play();
         //console.log('requesting update 2');
-        //update();
+        update();
         //btn.innerText = count[sounds.indexOf(sound)];
     });    
     btn.addEventListener('mouseenter', ()=> {
@@ -54,6 +54,7 @@ function update() {
     //console.log(count);
     //console.log(count.length);
 };
+
 function click(person,btn) {
     //console.log(person);
     const xhttp = new XMLHttpRequest();
@@ -64,9 +65,9 @@ function click(person,btn) {
         if(this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);
             console.log('the only update that is supposed to happen');
-            update();
+            singular = JSON.parse(this.responseText);
             console.log('changed button text');
-            btn.innerText = count[sounds.indexOf(person)];
+            btn.innerText = singular;
         }
         
     }
