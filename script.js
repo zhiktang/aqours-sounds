@@ -42,8 +42,9 @@ function update() {
             const res = this.responseText;
            // console.log(file);
             //console.log(res);
-            count = res;
-            console.log(count);
+            lines = JSON.parse(res);
+            console.log(lines);
+            count = lines;
         }
     }
     //console.log(count);

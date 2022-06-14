@@ -27,7 +27,7 @@ fs.readFile('count.txt', 'utf8', function(err, data) {
 );
 
 app.get('/', function (req, res) {
-    res.send(count);
+    res.send(JSON.stringify(count));
 });
 
 // app.post('/', function(req, res) {
@@ -102,7 +102,7 @@ function save () {
         else {
             output += people[i] + ' ' + count[i];
         }
-        
+
     }
     fs.writeFile('count.txt', output, function(err) {
         if(err) {
