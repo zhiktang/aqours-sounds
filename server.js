@@ -45,6 +45,7 @@ app.post('/', function(req, res) {
 }
 );
 function save () {
+    console.log('saving file');
     var output = '';
     for (var i = 0; i < people.length; i++) {
         if(i < people.length - 1) {
