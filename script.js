@@ -65,4 +65,5 @@ function click(person) {
             console.log(this.responseText);
         }
     }
+    update();
 };
