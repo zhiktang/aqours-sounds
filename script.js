@@ -1,6 +1,7 @@
 const sounds = ['Chika', 'Riko', 'You', 'Dia', 'Kanan', 'Mari', 'Hanamaru', 'Ruby', 'Yoshiko'];
 
 var count = [0 , 0, 0, 0, 0, 0, 0, 0, 0];
+var keyon = 'none';
 sounds.forEach((sound)=> {
     
     const btn = document.createElement('button');
@@ -23,12 +24,14 @@ sounds.forEach((sound)=> {
     });    
     btn.addEventListener('mouseenter', ()=> {
         //console.log("enter");
+        keyon = sound;
         update();
         btn.innerText = count[sounds.indexOf(sound)];
 
     });
     btn.addEventListener('mouseleave', ()=> {
         update();
+        keyon = 'none';
         btn.innerText = sound;
     });
 
@@ -66,9 +69,11 @@ function click(person,btn) {
         if(this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);
             console.log('the only update that is supposed to happen');
-            singular = JSON.parse(this.responseText);
-            console.log('changed button text');
-            btn.innerText = singular;
+            if(keyon == person) {
+                singular = JSON.parse(this.responseText);
+                console.log('changed button text');
+                btn.innerText = singular;
+            }
         }
         
     }
