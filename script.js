@@ -58,7 +58,7 @@ function update() {
     //console.log(count);
     //console.log(count.length);
 };
-
+//test
 function click(person,btn) {
     //console.log(person);
     const xhttp = new XMLHttpRequest();
