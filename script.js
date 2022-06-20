@@ -6,8 +6,10 @@ sounds.forEach((sound)=> {
     
     const btn = document.createElement('button');
     btn.classList.add('btn');
-    //makes the inner html of the button the image with the name of the sound in folder images and make the images the same height and double the width as the buttons and have the image be centered on the button
-    btn.innerHTML = `<img src="images/${sound}.png" alt="${sound}" height="100" width="200">`;
+    btn.innerText = sound;
+
+    //add the button to the div with the id of sound
+    document.getElementById('buttons').appendChild(btn);
 
     update();
     btn.addEventListener('click', ()=> {
@@ -34,7 +36,7 @@ sounds.forEach((sound)=> {
     btn.addEventListener('mouseleave', ()=> {
         update();
         keyon = 'none';
-    btn.innerHTML = `<img src="images/${sound}.png" alt="${sound}" height="100" width="200">`;
+        btn.innerText = sound;
     });
 
     document.getElementById('buttons').appendChild(btn);
