@@ -43,7 +43,7 @@ sounds.forEach((sound)=> {
 });
 function update() {
     const xhttp = new XMLHttpRequest();
-    xhttp.open('GET', 'https://count.alhub.net', true);
+    xhttp.open('GET', 'https://count.zhiktang.com', true);
     xhttp.send();
     xhttp.onreadystatechange = function() {
        // console.log(xhttp.readyState);
@@ -65,7 +65,7 @@ function update() {
 function click(person,btn) {
     //console.log(person);
     const xhttp = new XMLHttpRequest();
-    xhttp.open('POST', 'https://count.alhub.net', true);
+    xhttp.open('POST', 'https://count.zhiktang.com', true);
     xhttp.setRequestHeader('Content-type', 'application/json');
     xhttp.send(JSON.stringify({person: person}));
     xhttp.onreadystatechange = function() {
